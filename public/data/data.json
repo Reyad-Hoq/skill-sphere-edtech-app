@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://i.postimg.cc/4xK1bBwM/web-course.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "React & Next.js Masterclass",
+    "instructor": "Sarah Johnson",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build modern React and Next.js applications with real projects.",
+    "image": "https://i.postimg.cc/W1TnM5nD/react-course.jpg",
+    "category": "Frontend"
+  },
+  {
+    "id": 3,
+    "title": "Node.js & Express API Development",
+    "instructor": "Michael Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Create RESTful APIs using Node.js, Express, and MongoDB.",
+    "image": "https://i.postimg.cc/L6XDM1bD/node-course.jpg",
+    "category": "Backend"
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Emily Davis",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Understand the basics of user interface and user experience design.",
+    "image": "https://i.postimg.cc/Zqj0m9Xe/uiux-course.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 5,
+    "title": "Python for Data Science",
+    "instructor": "David Wilson",
+    "duration": "22 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Analyze data and build machine learning models using Python.",
+    "image": "https://i.postimg.cc/fL21wM9d/python-course.jpg",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "Digital Marketing Essentials",
+    "instructor": "Sophia Brown",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn SEO, social media marketing, and online advertising basics.",
+    "image": "https://i.postimg.cc/0Q0n3K0x/marketing-course.jpg",
+    "category": "Marketing"
+  }
+]
