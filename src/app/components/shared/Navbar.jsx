@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import logo from "@/assets/logo3.png";
+import Navlink from './Navlink';
 const Navbar = () => {
   const links = <>
-    <li><Link href="/">Home</Link></li>
-    <li><Link href="/courses">Courses</Link></li>
-    <li><Link href="/profile">My profile</Link></li>
+    <li><Navlink href="/">Home</Navlink></li>
+    <li><Navlink href="/courses">Courses</Navlink></li>
+    <li><Navlink href="/profile">My profile</Navlink></li>
   </>;
   return (
     <div className=" bg-base-100 shadow-sm">

@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import { FaEye, FaStar } from 'react-icons/fa6';
+import Rating from '../shared/Rating';
+import Link from 'next/link';
 
 const CourseCard = ({ course }) => {
   return (
@@ -15,9 +18,16 @@ const CourseCard = ({ course }) => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title font-black text-green-800">{course.title}</h2>
-          <p>{course.description}</p>
+          <p>By {course.instructor}</p>
+          <div className='bg-slate-50 flex justify-between p-1'>
+            <h2 className='flex gap-2 items-center'>
+              <Rating rating={course.rating} />
+            </h2>
+          </div>
           <div className="card-actions">
-            <button className="btn btn-warning">See Details</button>
+            <Link href={`/courses/${course.id}`} className="btn btn-warning">
+              See Details
+            </Link>
           </div>
         </div>
       </div>
