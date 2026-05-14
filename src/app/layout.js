@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/shared/Navbar";
-import Banner from "./components/shared/Banner";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +28,6 @@ export default function RootLayout({ children }) {
       className={` h-full antialiased`}
     >
       <body className={`min-h-full flex flex-col ${jetbrainsMono.className}`}>
-        <Navbar />
-        <Banner />  
         {children}
       </body>
     </html >
