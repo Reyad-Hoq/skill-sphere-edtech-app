@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const slides = [
@@ -48,12 +49,12 @@ const Banner = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex gap-3">
-          <button className="px-4 py-2 bg-white text-black rounded">
+          <Link href="/login" className="btn px-4 py-2 bg-white text-black rounded">
             Get Started
-          </button>
-          <button className="px-4 py-2 border border-white rounded">
+          </Link>
+          <Link href="/learn-more" className="btn bg-transparent px-4 py-2 border border-white text-white rounded">
             Learn More
-          </button>
+          </Link>
         </div>
 
         {/* Dots */}
