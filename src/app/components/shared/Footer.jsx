@@ -15,7 +15,7 @@ const Footer = () => {
             height={100}
             alt="footer-logo" />
           <p >
-            Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
+            SkillSphere is an online learning platform designed to help learners build real-world skills through interactive courses and practical projects.
           </p>
         </aside>
         <nav>
