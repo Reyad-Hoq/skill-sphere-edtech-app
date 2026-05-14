@@ -8,7 +8,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="bg-base-200">
-      <footer className="footer footer-horizontal footer-center text-neutral w-9/12 mx-auto p-5">
+      <footer className="footer footer-horizontal footer-center text-neutral w-full md:w-9/12 mx-auto p-5">
         <aside>
           <Image
             src={footerImg}

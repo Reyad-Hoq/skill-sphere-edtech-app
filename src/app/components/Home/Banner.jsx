@@ -37,7 +37,7 @@ const Banner = () => {
   return (
     <div className={"transition-all duration-700 " + current.bg}>
       <div
-        className={`h-[60vh] flex flex-col justify-center items-center text-white  w-9/12 mx-auto rounded-lg relative overflow-hidden`}
+        className={`h-[60vh] flex flex-col justify-center items-center text-white  w-full md:w-9/12 mx-auto rounded-lg relative overflow-hidden`}
       >
         <h1 className="text-3xl md:text-5xl font-bold text-center">
           {current.title}
