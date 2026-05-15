@@ -9,21 +9,21 @@ const Rating = ({ rating }) => {
           return (
             <FaStar
               key={star}
-              className="text-yellow-400"
+              className="text-yellow-500"
             />
           );
         } else if (rating >= star - 0.5) {
           return (
             <FaStarHalfAlt
               key={star}
-              className="text-yellow-400"
+              className="text-yellow-500"
             />
           );
         } else {
           return (
             <FaRegStar
               key={star}
-              className="text-gray-300"
+              className="text-yellow-500"
             />
           );
         }

@@ -4,6 +4,8 @@ import React from 'react';
 import CourseCard from './CourseCard';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Link from 'next/link';
+import Instructor from './Instructor';
+import StudyTips from './StudyTips';
 
 
 const Courses = async () => {
@@ -25,6 +27,8 @@ const Courses = async () => {
         <span>Explore More Courses</span>
         <FaArrowRightLong />
       </Link>
+      <StudyTips />
+      <Instructor />
     </div>
   );
 };
