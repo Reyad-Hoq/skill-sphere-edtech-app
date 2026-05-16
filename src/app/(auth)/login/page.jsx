@@ -3,6 +3,8 @@ import { Check } from "@gravity-ui/icons";
 
 import React from 'react';
 import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -10,10 +12,17 @@ const LoginPage = () => {
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
     console.log(userData);
+    const { data, error } = await authClient.signIn.email({
+      email: userData.email,
+      password: userData.password,
+      callbackURL: "https://example.com/callback",
+    });
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-base-200">
       <Form className="flex w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
+        <h2 className="text-2xl text-blue-500">Please Login</h2>
+
         <TextField
           isRequired
           name="email"
@@ -61,6 +70,12 @@ const LoginPage = () => {
             Reset
           </Button>
         </div>
+        <p className="text-sm text-muted-foreground">
+          Don&apos;t have an account?{' '}
+          <Link href="/register" className="text-blue-500 hover:underline">
+            Register
+          </Link>
+        </p>
       </Form>
     </div>
   );
