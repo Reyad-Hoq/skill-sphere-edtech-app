@@ -1,5 +1,5 @@
 import CourseCard from '@/app/components/Home/CourseCard';
-import { getData } from '@/app/lib/data';
+import { getData } from '@/lib/data';
 import Image from 'next/image';
 import React from 'react';
 

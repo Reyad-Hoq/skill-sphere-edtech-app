@@ -1,5 +1,5 @@
 
-import { getData } from '@/app/lib/data';
+import { getData } from '@/lib/data';
 import React from 'react';
 import CourseCard from './CourseCard';
 import { FaArrowRightLong } from 'react-icons/fa6';

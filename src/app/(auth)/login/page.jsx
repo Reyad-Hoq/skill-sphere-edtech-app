@@ -4,13 +4,14 @@ import { Check } from "@gravity-ui/icons";
 
 import React from 'react';
 import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+
 const LoginPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-base-200">
-      <Form className="flex w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl" onSubmit={onSubmit}>
+      <Form className="flex w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
         <TextField
           isRequired
           name="email"
@@ -52,7 +53,7 @@ const LoginPage = () => {
         <div className="flex gap-2">
           <Button type="submit" variant='tertiary' >
             <Check />
-            Submit
+            Login
           </Button>
           <Button type="reset" variant="secondary">
             Reset

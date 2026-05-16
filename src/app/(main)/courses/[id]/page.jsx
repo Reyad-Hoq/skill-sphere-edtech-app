@@ -1,5 +1,5 @@
 import Rating from '@/app/components/shared/Rating';
-import { getCourseData } from '@/app/lib/data';
+import { getCourseData } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
