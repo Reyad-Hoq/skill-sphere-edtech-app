@@ -1,13 +1,15 @@
 'use client';
-import Link from 'next/link';
 import { Check } from "@gravity-ui/icons";
 
 import React from 'react';
 import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 
 const LoginPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const userData = Object.fromEntries(formData.entries());
+    console.log(userData);
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-base-200">
