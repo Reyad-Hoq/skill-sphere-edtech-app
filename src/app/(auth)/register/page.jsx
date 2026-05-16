@@ -14,8 +14,14 @@ const RegisterPage = () => {
       name: userData.name, // required
       email: userData.email, // required
       password: userData.password, // required
-      callbackURL: "https://example.com/callback",
+      callbackURL: "/courses" // optional, defaults to "/"
     });
+    console.log(data, error);
+    if (error) {
+      alert(error.message);
+    } else {
+      alert("Registration successful! Please check your email to verify your account.");
+    }
   };
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-base-200">
