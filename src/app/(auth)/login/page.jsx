@@ -1,11 +1,66 @@
-import React from 'react';
+'use client';
+import Link from 'next/link';
+import { Check } from "@gravity-ui/icons";
 
-const page = () => {
+import React from 'react';
+import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+const LoginPage = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <div>
-      login here
+    <div className="flex min-h-screen items-center justify-center bg-base-200">
+      <Form className="flex w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl" onSubmit={onSubmit}>
+        <TextField
+          isRequired
+          name="email"
+          type="email"
+          validate={(value) => {
+            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+              return "Please enter a valid email address";
+            }
+            return null;
+          }}
+        >
+          <Label>Email</Label>
+          <Input placeholder="john@example.com" className="bg-base-300" />
+          <FieldError />
+        </TextField>
+        <TextField
+          isRequired
+          minLength={8}
+          name="password"
+          type="password"
+          validate={(value) => {
+            if (value.length < 8) {
+              return "Password must be at least 8 characters";
+            }
+            if (!/[A-Z]/.test(value)) {
+              return "Password must contain at least one uppercase letter";
+            }
+            if (!/[0-9]/.test(value)) {
+              return "Password must contain at least one number";
+            }
+            return null;
+          }}
+        >
+          <Label>Password</Label>
+          <Input placeholder="Enter your password" className="bg-base-300" />
+          <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+          <FieldError />
+        </TextField>
+        <div className="flex gap-2">
+          <Button type="submit" variant='tertiary' >
+            <Check />
+            Submit
+          </Button>
+          <Button type="reset" variant="secondary">
+            Reset
+          </Button>
+        </div>
+      </Form>
     </div>
   );
 };
 
-export default page;
+export default LoginPage;
