@@ -27,7 +27,7 @@ const ProfilePage = () => {
             <div className="-mt-16 flex justify-center">
               <Image
                 src={image}
-                alt={user.name}
+                alt={user?.name}
                 width={120}
                 height={120}
                 className="rounded-full border-4 border-white object-cover"
@@ -37,7 +37,7 @@ const ProfilePage = () => {
             {/* User Info */}
             <div className="text-center mt-5">
               <h1 className="text-3xl font-bold">
-                {user.name}
+                {user?.name}
               </h1>
 
               <p className="text-gray-500 mt-2">
@@ -57,7 +57,7 @@ const ProfilePage = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user.email}
+                  {user?.email}
                 </p>
               </div>
 
@@ -70,7 +70,7 @@ const ProfilePage = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user.role === "student" ? "Student" : "Instructor"}
+                  {user?.role === "student" ? "Student" : "Instructor"}
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ const ProfilePage = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user.enrolledCourses} Enrolled
+                  {user?.enrolledCourses} Enrolled
                 </p>
               </div>
             </div>

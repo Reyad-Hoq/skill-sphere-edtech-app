@@ -43,7 +43,14 @@ const Navbar = () => {
         {isPending ? <div className='navbar-end'>loading <span className="loading loading-dots loading-lg mx-3"></span></div>
           : data?.user ? <div className="navbar-end">
             <span className="mr-4">Hello, {data?.user?.name}</span>
-            <button onClick={() => signOut()} className="btn">Log out</button>
+            <button onClick={() => signOut({
+              fetchOptions: {
+                cache: "no-store",
+                onSuccess: () => {
+                  window.location.href = "/";
+                }
+              }
+            })} className="btn">Log out</button>
           </div> : <div className="navbar-end gap-3">
 
             <Link href="/login" className="btn">Login</Link>

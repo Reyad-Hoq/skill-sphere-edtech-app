@@ -7,6 +7,7 @@ export async function proxy(request) {
   const session = await auth.api.getSession({
     headers: await headers()
   })
+  console.log(request.nextUrl.pathname);
   if (session) {
     return NextResponse.next();
   }
