@@ -17,16 +17,16 @@ const LoginPage = () => {
     const { data, error } = await authClient.signIn.email({
       email: userData.email,
       password: userData.password,
-      callbackURL: "/" // optional, defaults to "/"
     });
     if (error) {
       toast.error(error.message, {
         autoClose: 1500,
       });
     } else {
-      toast.success("Login successful! Redirecting...", {
-        autoClose: 5000,
-      });
+      toast.success("Login successful! Redirecting...");
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 1500);
     }
   };
   return (
