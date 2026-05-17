@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
         {isPending ? <div className='navbar-end'>loading <span className="loading loading-dots loading-lg mx-3"></span></div>
           : data?.user ? <div className="navbar-end">
-            <span className="mr-4">Hello, {data.user.name}</span>
+            <span className="mr-4">Hello, {data?.user?.name}</span>
             <button onClick={() => signOut()} className="btn">Log out</button>
           </div> : <div className="navbar-end gap-3">
 
