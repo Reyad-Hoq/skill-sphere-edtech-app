@@ -32,7 +32,7 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center mx-auto w-10/12">
       <Form className="flex w-full md:w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
-        <h2 className="text-2xl text-blue-500">Please Login</h2>
+        <h2 className="text-2xl text-orange-500">Please Login</h2>
 
         <TextField
           isRequired
@@ -75,13 +75,13 @@ const LoginPage = () => {
           </InputGroup>
         </TextField>
         <div className="variant-primary flex w-full items-center justify-between">
-          <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-400">
+          <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-400">
             Login
           </Button>
         </div>
         <p className="text-sm text-muted-foreground">
           Don&apos;t have an account?{' '}
-          <Link href="/register" className="text-blue-500 hover:underline">
+          <Link href="/register" className="text-orange-600 hover:underline">
             Register
           </Link>
         </p>

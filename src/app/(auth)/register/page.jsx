@@ -35,7 +35,7 @@ const RegisterPage = () => {
     <div className="flex flex-col min-h-screen items-center justify-center mx-auto w-11/12 rounded-4xl">
 
       <Form className="flex w-full md:w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
-        <h2 className="text-2xl text-blue-500">Please Register</h2>
+        <h2 className="text-2xl text-orange-500">Please Register</h2>
         <TextField
           isRequired
           name="name"
@@ -127,16 +127,16 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
         <div className="flex gap-2">
-          <Button type="submit" className="bg-blue-600 hover:bg-blue-500">
+          <Button type="submit" className="bg-orange-600 hover:bg-orange-500">
             Register
           </Button>
-          <Button type="reset" variant="secondary">
+          <Button type="reset" className="btn border-2 border-orange-600 text-orange-600 rounded-full">
             Reset
           </Button>
         </div>
         <p className="text-sm text-muted-foreground">
           Already have an account?{' '}
-          <a href="/login" className="text-blue-500 hover:underline">
+          <a href="/login" className="text-orange-600 hover:underline">
             Login
           </a>
         </p>

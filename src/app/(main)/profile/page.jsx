@@ -18,7 +18,7 @@ const ProfilePage = () => {
         <div className="bg-base-100 shadow-xl rounded-3xl overflow-hidden">
 
           {/* Cover */}
-          <div className="h-48 bg-gradient-to-r from-primary via-55% to-orange-400"></div>
+          <div className="h-48 bg-orange-500"></div>
 
           {/* Profile Content */}
           <div className="px-8 pb-10">
@@ -50,7 +50,7 @@ const ProfilePage = () => {
 
               {/* Email */}
               <div className="bg-base-200 rounded-2xl p-6 text-center">
-                <FaEnvelope className="text-3xl mx-auto mb-4 text-primary" />
+                <FaEnvelope className="text-3xl mx-auto mb-4 text-orange-600" />
 
                 <h2 className="font-semibold text-lg">
                   Email
@@ -63,7 +63,7 @@ const ProfilePage = () => {
 
               {/* Role */}
               <div className="bg-base-200 rounded-2xl p-6 text-center">
-                <FaUserGraduate className="text-3xl mx-auto mb-4 text-primary" />
+                <FaUserGraduate className="text-3xl mx-auto mb-4 text-orange-600" />
 
                 <h2 className="font-semibold text-lg">
                   Role
@@ -76,7 +76,7 @@ const ProfilePage = () => {
 
               {/* Courses */}
               <div className="bg-base-200 rounded-2xl p-6 text-center">
-                <FaBookOpen className="text-3xl mx-auto mb-4 text-primary" />
+                <FaBookOpen className="text-3xl mx-auto mb-4 text-orange-600" />
 
                 <h2 className="font-semibold text-lg">
                   Courses
@@ -90,11 +90,11 @@ const ProfilePage = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <button className="btn btn-primary px-8">
+              <button className="btn border-2 border-orange-600 text-orange-600 px-8">
                 Edit Profile
               </button>
 
-              <button className="btn btn-outline btn-primary px-8">
+              <button className="btn bg-orange-600 text-white border-2 border-orange-500 px-8">
                 My Courses
               </button>
             </div>
