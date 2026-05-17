@@ -1,20 +1,15 @@
-
+'use client';
+import { useSession } from "@/lib/auth-client";
 import Image from "next/image";
 import {
   FaEnvelope,
   FaUserGraduate,
   FaBookOpen,
 } from "react-icons/fa";
-
-const page = () => {
-  const user = {
-    name: "Reyad Hoq",
-    email: "reyad@example.com",
-    role: "Student",
-    enrolledCourses: 6,
-    image:
-      "https://randomuser.me/api/portraits/men/32.jpg",
-  };
+import image from "@/assets/user.png";
+const ProfilePage = () => {
+  const { data } = useSession();
+  const user = data?.user;
   return (
     <div className="min-h-screen bg-base-200 py-12 px-4">
       <div className="max-w-4xl mx-auto">
@@ -31,7 +26,7 @@ const page = () => {
             {/* Profile Image */}
             <div className="-mt-16 flex justify-center">
               <Image
-                src={user.image}
+                src={image}
                 alt={user.name}
                 width={120}
                 height={120}
@@ -75,7 +70,7 @@ const page = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user.role}
+                  {user.role === "student" ? "Student" : "Instructor"}
                 </p>
               </div>
 
@@ -112,4 +107,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ProfilePage;

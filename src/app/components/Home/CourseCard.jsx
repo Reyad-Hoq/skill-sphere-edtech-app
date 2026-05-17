@@ -25,7 +25,7 @@ const CourseCard = ({ course }) => {
             </h2>
           </div>
           <div className="card-actions">
-            <Link href={`/courses/${course.id}`} className="btn btn-warning">
+            <Link href={`/course/${course.id}`} className="btn btn-warning">
               See Details
             </Link>
           </div>

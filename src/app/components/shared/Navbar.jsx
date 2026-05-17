@@ -1,9 +1,14 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { use } from 'react';
 import logo from "@/assets/logo3.png";
 import Navlink from './Navlink';
+import { useSession, signOut } from '@/lib/auth-client';
 const Navbar = () => {
+  const { data, isPending } = useSession();
+  console.log(data, isPending);
+
   const links = <>
     <li><Navlink href="/">Home</Navlink></li>
     <li><Navlink href="/courses">Courses</Navlink></li>
@@ -35,10 +40,16 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <div className="navbar-end gap-3">
-          <Link href="/login" className="btn">Login</Link>
-          <Link href="/register" className="btn hidden md:flex">Register</Link>
-        </div>
+        {isPending ? <div className='navbar-end'>loading <span className="loading loading-dots loading-lg mx-3"></span></div>
+          : data?.user ? <div className="navbar-end">
+            <span className="mr-4">Hello, {data.user.name}</span>
+            <button onClick={() => signOut()} className="btn">Log out</button>
+          </div> : <div className="navbar-end gap-3">
+
+            <Link href="/login" className="btn">Login</Link>
+            <Link href="/register" className="btn hidden md:flex">Register</Link>
+          </div>
+        }
       </div>
     </div>
   );

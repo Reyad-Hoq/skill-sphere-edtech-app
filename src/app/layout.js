@@ -2,6 +2,8 @@ import dns from "node:dns";
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Toast } from "@heroui/react";
+import { ToastContainer } from "react-toastify";
 
 
 const geistSans = Geist({
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
     >
       <body className={`min-h-full flex flex-col ${jetbrainsMono.className}`}>
         {children}
+        <ToastContainer />
       </body>
     </html >
   );

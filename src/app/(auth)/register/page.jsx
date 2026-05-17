@@ -1,7 +1,9 @@
 'use client'
+import { toast } from "react-toastify";
+
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
-import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react'
+import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField, Select, ListBox } from '@heroui/react'
 
 
 const RegisterPage = () => {
@@ -13,20 +15,26 @@ const RegisterPage = () => {
     const { data, error } = await authClient.signUp.email({
       name: userData.name, // required
       email: userData.email, // required
+      image: userData.profilePhoto, // optional
+      role: userData.role, // optional, can be used to set custom user roles
       password: userData.password, // required
-      callbackURL: "/courses" // optional, defaults to "/"
+      callbackURL: "/" // optional, defaults to "/"
     });
     console.log(data, error);
     if (error) {
-      alert(error.message);
+      toast.error(error.message, {
+        autoClose: 2500,
+      });
     } else {
-      alert("Registration successful! Please check your email to verify your account.");
+      toast.success("Registration successful! Please check your email to verify your account.", {
+        autoClose: 2000,
+      });
     }
   };
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-base-200">
+    <div className="flex flex-col min-h-screen items-center justify-center mx-auto w-11/12 rounded-4xl">
 
-      <Form className="flex w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
+      <Form className="flex w-full md:w-96 flex-col gap-4 bg-base-100 py-10 px-6 rounded-lg shadow-2xl justify-center" onSubmit={onSubmit}>
         <h2 className="text-2xl text-blue-500">Please Register</h2>
         <TextField
           isRequired
@@ -44,6 +52,20 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
         <TextField
+          name="profilePhoto"
+          type="text"
+          validate={(value) => {
+            if (value.length < 2) {
+              return "Please enter a valid profile photo URL";
+            }
+            return null;
+          }}
+        >
+          <Label>Profile photo</Label>
+          <Input placeholder="https://example.com/photo.jpg" className="bg-base-300" />
+          <FieldError />
+        </TextField>
+        <TextField
           isRequired
           name="email"
           type="email"
@@ -58,6 +80,29 @@ const RegisterPage = () => {
           <Input placeholder="john@example.com" className="bg-base-300" />
           <FieldError />
         </TextField>
+        <Select name="role" className="w-full" placeholder="Select one" isRequired>
+          <Label>Role</Label>
+          <Select.Trigger className="w-full bg-base-300">
+            <Select.Value />
+            <Select.Indicator />
+          </Select.Trigger>
+          <Select.Popover>
+            <ListBox >
+              <ListBox.Item id="low" textValue="Low">
+                Student
+                <ListBox.ItemIndicator />
+              </ListBox.Item>
+              <ListBox.Item id="medium" textValue="Medium">
+                Instructor
+                <ListBox.ItemIndicator />
+              </ListBox.Item>
+              <ListBox.Item id="high" textValue="High">
+                Admin
+                <ListBox.ItemIndicator />
+              </ListBox.Item>
+            </ListBox>
+          </Select.Popover>
+        </Select>
         <TextField
           isRequired
           minLength={8}
@@ -82,14 +127,19 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
         <div className="flex gap-2">
-          <Button type="submit" variant='tertiary' >
-            <Check />
+          <Button type="submit" className="bg-blue-600 hover:bg-blue-500">
             Register
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
+        <p className="text-sm text-muted-foreground">
+          Already have an account?{' '}
+          <a href="/login" className="text-blue-500 hover:underline">
+            Login
+          </a>
+        </p>
       </Form>
     </div>
   );
