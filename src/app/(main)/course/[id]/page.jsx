@@ -9,9 +9,72 @@ const page = async ({ params }) => {
   const { id } = await params;
   console.log(id);
   const course = await getCourseData(id);
+  const curriculum = [
+    {
+      id: 1,
+      title: "Introduction to Web Development",
+      lessons: [
+        "What is Web Development?",
+        "Frontend vs Backend",
+        "How the Internet Works",
+        "Development Environment Setup",
+      ],
+    },
+    {
+      id: 2,
+      title: "HTML Fundamentals",
+      lessons: [
+        "HTML Document Structure",
+        "Headings, Paragraphs & Links",
+        "Images & Multimedia",
+        "Forms and Inputs",
+      ],
+    },
+    {
+      id: 3,
+      title: "CSS Basics",
+      lessons: [
+        "Selectors & Colors",
+        "Box Model",
+        "Flexbox & Grid",
+        "Responsive Design",
+      ],
+    },
+    {
+      id: 4,
+      title: "JavaScript Essentials",
+      lessons: [
+        "Variables & Data Types",
+        "Functions & Events",
+        "DOM Manipulation",
+        "ES6 Features",
+      ],
+    },
+    {
+      id: 5,
+      title: "React & Next.js",
+      lessons: [
+        "React Components",
+        "Props & State",
+        "Next.js Routing",
+        "API Integration",
+      ],
+    },
+    {
+      id: 6,
+      title: "Project & Deployment",
+      lessons: [
+        "Build a Real Project",
+        "Authentication Setup",
+        "MongoDB Integration",
+        "Deploy to Vercel",
+      ],
+    },
+  ];
+
   return (
-    <div className="w-full md:w-8/12 mx-auto p-4 my-12">
-      <div className="card bg-base-100 shadow-xl h-full">
+    <div className="w-full md:w-8/12 mx-auto p-4 my-12 flex flex-col md:flex-row gap-10 justify-between">
+      <div className="card bg-base-100 shadow-xl w-full md:w-6/12">
 
         {/* Course Image */}
         <figure>
@@ -20,7 +83,7 @@ const page = async ({ params }) => {
             alt={course.title}
             width={500}
             height={300}
-            className="w-full h-96 object-cover rounded-t-lg"
+            className="w-full rounded-t-lg"
           />
         </figure>
 
@@ -73,6 +136,29 @@ const page = async ({ params }) => {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="space-y-5 w-full md:w-6/12">
+        {curriculum.filter((module) => module.id === parseInt(id)).map((module) => (
+          <div
+            key={module.id}
+            className="rounded-xl p-10 bg-base-100 shadow-lg"
+          >
+            <h2 className="text-xl font-semibold mb-3">
+              Module {module.id}: {module.title}
+            </h2>
+
+            <ul className="space-y-2">
+              {module.lessons.map((lesson, index) => (
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-neutral/80"
+                >
+                  ✅ {lesson}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

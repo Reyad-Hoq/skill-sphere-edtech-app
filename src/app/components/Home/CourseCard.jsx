@@ -7,7 +7,7 @@ import Link from 'next/link';
 const CourseCard = ({ course }) => {
   return (
     <div>
-      <div className="card bg-base-100 shadow-lg h-full">
+      <div className="card bg-orange-50 shadow-lg h-full">
         <figure className="px-10 pt-10">
           <Image
             src={course.image}

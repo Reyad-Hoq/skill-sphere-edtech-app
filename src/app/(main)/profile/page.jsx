@@ -11,7 +11,7 @@ const ProfilePage = () => {
   const { data } = useSession();
   const user = data?.user;
   return (
-    <div className="min-h-screen bg-base-200 py-12 px-4">
+    <div className="min-h-screen bg-orange-50 py-12 px-4">
       <div className="max-w-4xl mx-auto">
 
         {/* Profile Card */}

@@ -28,9 +28,9 @@ const Navbar = () => {
     <li><Navlink href="/profile">My profile</Navlink></li>
   </>;
   return (
-    <div className=" bg-base-100 shadow-sm">
+    <div className=" bg-orange-200 shadow-lg">
       <div className="navbar w-full md:w-9/12 mx-auto ">
-        <div className="navbar-start flex flex-wrap-reverse gap-2">
+        <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -47,7 +47,7 @@ const Navbar = () => {
               }
             </ul>
           </div>
-          <Link href="/" className="btn btn-ghost font-semibold text-2xl">
+          <Link href="/" className="btn btn-ghost font-semibold text-lg md:text-2xl">
             <span className='text-green-900'>Skill</span>
             <span className='text-orange-600'>Sphere</span>
             {/* <Image src={logo} alt="SkillSphere Logo" width={250} height={200} /> */}
@@ -68,10 +68,11 @@ const Navbar = () => {
                 alt="User avatar"
                 width={40}
                 height={40}
+                className='rounded-full'
               />
               <button onClick={signOutHandler} className="btn ml-3 hidden md:flex btn-error btn-outline">Log out</button>
             </div> : <div className="navbar-end gap-3">
-              <Link href="/login" className="btn border-2 border-orange-600 text-orange-600">Login</Link>
+              <Link href="/login" className="btn border-2 border-orange-600 text-orange-600 hidden md:flex">Login</Link>
               <Link href="/register" className="btn bg-green-900 text-white border-2 border-green-600 hidden md:flex">Register</Link>
             </div>
         }

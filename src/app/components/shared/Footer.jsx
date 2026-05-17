@@ -8,16 +8,16 @@ import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="bg-base-200">
-      <footer className="footer footer-horizontal footer-center text-neutral w-full md:w-9/12 mx-auto p-5">
+    <div className="bg-green-50">
+      <footer className="footer footer-horizontal footer-center text-neutral w-full md:w-9/12 mx-auto p-4">
         <aside>
           <Image
             src={footerImg}
             width={400}
             height={100}
             alt="footer-logo" />
-          <p >
-            SkillSphere is an online learning platform designed to help learners build real-world <br /> skills through interactive courses and practical projects.
+          <p className="w-9/12 mx-auto text-center text-neutral/70">
+            SkillSphere is an online learning platform designed to help learners build real-world skills through interactive courses and practical projects.
           </p>
         </aside>
         <nav>
@@ -40,32 +40,31 @@ const Footer = () => {
             </div>
           </div>
         </nav>
-      </footer>
-      <footer className="flex flex-col-reverse md:flex-row justify-between items-center gap-10 text-neutral/60 text-sm border-t border-neutral/40 p-6 w-9/12 mx-auto">
-      <div className="text-center mt-6">
-            <h6 className="text-lg font-semibold mb-2 text-neutral/60">
-              Contact Info
-            </h6>
-
-            <div className="flex gap-2 text-sm text-neutral/70">
-
-              <div className="flex items-center gap-2 justify-center">
-                <MdEmail />
-                <span>support@skillsphere.com</span>
-              </div>
-
-              <div className="flex items-center gap-2 justify-center">
-                <MdPhone />
-                <span>+880 1XXXXXXXXX</span>
-              </div>
-
-              <div className="flex items-center gap-2 justify-center">
-                <MdLocationOn />
-                <span>Dhaka, Bangladesh</span>
-              </div>
-
+        <div className="text-center mt-3">
+          <h6 className="text-lg font-semibold mb-2 text-neutral/60">
+            Contact Info
+          </h6>
+          <div className="flex flex-col md:flex-row gap-2 text-[16px] text-neutral/70">
+            <div className="flex items-center gap-2 justify-center">
+              <MdEmail />
+              <span>support@skillsphere.com</span>
             </div>
+
+            <div className="flex items-center gap-2 justify-center">
+              <MdPhone />
+              <span>+880 1XXXXXXXXX</span>
+            </div>
+
+            <div className="flex items-center gap-2 justify-center">
+              <MdLocationOn />
+              <span>Dhaka, Bangladesh</span>
+            </div>
+
           </div>
+        </div>
+      </footer>
+      <footer className="flex flex-col-reverse md:flex-row justify-between items-center gap-10 text-neutral/60 text-[16px] border-t border-neutral/40 p-6 w-9/12 mx-auto">
+
         <aside className="grid-flow-col items-center">
           <p>© {new Date().getFullYear()} SkillSphere All right reserved</p>
         </aside>

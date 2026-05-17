@@ -3,7 +3,7 @@ import React from 'react';
 
 const Instructor = () => {
   return (
-    <div className="py-16 bg-base-200">
+    <div className="py-16 bg-green-50 rounded-2xl">
       <div className="max-w-7xl mx-auto px-4">
 
         <div className="text-center mb-12">
