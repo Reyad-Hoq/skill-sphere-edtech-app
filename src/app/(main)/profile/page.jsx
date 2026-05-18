@@ -31,8 +31,8 @@ const ProfilePage = () => {
               <Image
                 src={user?.image || image}
                 alt={user?.name}
-                width={120}
-                height={120}
+                width={100}
+                height={100}
                 className="rounded-full border-4 border-white object-cover"
               />
             </div>
@@ -73,7 +73,7 @@ const ProfilePage = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user?.role === "student" ? "Student" : "Instructor"}
+                  {user?.role || "Student"}
                 </p>
               </div>
 
@@ -86,7 +86,7 @@ const ProfilePage = () => {
                 </h2>
 
                 <p className="text-gray-500 text-sm mt-2">
-                  {user?.enrolledCourses} Enrolled
+                  {user?.roll || "-"}
                 </p>
               </div>
             </div>
