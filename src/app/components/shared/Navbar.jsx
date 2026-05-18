@@ -3,7 +3,6 @@ import Image from 'next/image';
 import userAvatar from "@/assets/user.png";
 import Link from 'next/link';
 import React, { use } from 'react';
-import logo from "@/assets/logo3.png";
 import Navlink from './Navlink';
 import { useSession, signOut } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
