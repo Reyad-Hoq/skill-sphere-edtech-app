@@ -1,6 +1,11 @@
 "use client";
+
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const slides = [
   {
@@ -21,56 +26,49 @@ const slides = [
 ];
 
 const Banner = () => {
-  const [index, setIndex] = useState(0);
-
-  // Auto slide
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const current = slides[index];
-
   return (
-    <div className={"transition-all duration-700 " + current.bg}>
-      <div
-        className={`h-[60vh] flex flex-col justify-center items-center text-white  w-full md:w-9/12 mx-auto rounded-lg relative overflow-hidden`}
+    <div className="w-full md:w-9/12 mx-auto mt-10">
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        loop={true}
+        className="rounded-lg overflow-hidden"
       >
-        <h1 className="text-3xl md:text-5xl font-bold text-center">
-          {current.title}
-        </h1>
-
-        <p className="mt-4 text-sm md:text-lg text-center opacity-90">
-          {current.desc}
-        </p>
-
-        {/* Buttons */}
-        <div className="mt-6 flex gap-3">
-          <Link href="/login" className="btn px-4 py-2 bg-white text-black rounded">
-            Get Started
-          </Link>
-          <Link href="/learn-more" className="btn bg-transparent px-4 py-2 border border-white text-white rounded">
-            Learn More
-          </Link>
-        </div>
-
-        {/* Dots */}
-        <div className="absolute bottom-6 flex gap-2">
-          {slides.map((_, i) => (
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
             <div
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`w-2 h-2 rounded-full cursor-pointer ${i === index ? "bg-white" : "bg-white/40"
-                }`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+              className={`h-[60vh] flex flex-col justify-center items-center text-white ${slide.bg}`}
+            >
+              <h1 className="text-3xl md:text-5xl font-bold text-center">
+                {slide.title}
+              </h1>
 
+              <p className="mt-4 text-sm md:text-lg text-center opacity-90">
+                {slide.desc}
+              </p>
+
+              {/* Buttons */}
+              <div className="mt-6 flex gap-3">
+                <Link
+                  href="/login"
+                  className="px-4 py-2 bg-white text-black rounded"
+                >
+                  Get Started
+                </Link>
+
+                <Link
+                  href="/learn-more"
+                  className="px-4 py-2 border border-white text-white rounded"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
