@@ -4,7 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaClock, FaStar } from 'react-icons/fa6';
-
+export const metadata = {
+  title: "Course Details | SkillSphere",
+  description: "Learn more about this course and its content.",
+};
 const page = async ({ params }) => {
   const { id } = await params;
   console.log(id);

@@ -8,6 +8,8 @@ import {
 } from "react-icons/fa";
 import image from "@/assets/user.png";
 import Link from "next/link";
+
+
 const ProfilePage = () => {
   const { data } = useSession();
   const user = data?.user;
@@ -27,7 +29,7 @@ const ProfilePage = () => {
             {/* Profile Image */}
             <div className="-mt-16 flex justify-center">
               <Image
-                src={image}
+                src={user?.image || image}
                 alt={user?.name}
                 width={120}
                 height={120}

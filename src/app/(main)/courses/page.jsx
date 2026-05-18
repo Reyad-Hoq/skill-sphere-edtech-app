@@ -1,7 +1,10 @@
 import CourseCard from '@/app/components/Home/CourseCard';
 import { getData } from '@/lib/data';
 import React from 'react';
-
+export const metadata = {
+  title: "Courses | SkillSphere",
+  description: "Explore our courses and advance your skills.",
+};
 const Page = async ({ searchParams }) => {
 
   const params = await searchParams;
