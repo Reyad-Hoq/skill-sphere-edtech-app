@@ -48,7 +48,6 @@ const Banner = () => {
                 {slide.desc}
               </p>
 
-              {/* Buttons */}
               <div className="mt-6 flex gap-3">
                 <Link
                   href="/login"
