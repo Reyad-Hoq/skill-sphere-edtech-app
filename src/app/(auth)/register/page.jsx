@@ -18,7 +18,6 @@ const RegisterPage = () => {
       image: userData.profilePhoto, // optional
       role: userData.role, // optional, can be used to set custom user roles
       password: userData.password, // required
-      callbackURL: "/" // optional, defaults to "/"
     });
     console.log(data, error);
     if (error) {
@@ -29,6 +28,9 @@ const RegisterPage = () => {
       toast.success("Registration successful! Please check your email to verify your account.", {
         autoClose: 2000,
       });
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 1500);
     }
   };
   return (
@@ -88,15 +90,15 @@ const RegisterPage = () => {
           </Select.Trigger>
           <Select.Popover>
             <ListBox >
-              <ListBox.Item id="low" textValue="Low">
+              <ListBox.Item id="student" textValue="Student">
                 Student
                 <ListBox.ItemIndicator />
               </ListBox.Item>
-              <ListBox.Item id="medium" textValue="Medium">
+              <ListBox.Item id="instructor" textValue="Instructor">
                 Instructor
                 <ListBox.ItemIndicator />
               </ListBox.Item>
-              <ListBox.Item id="high" textValue="High">
+              <ListBox.Item id="admin" textValue="Admin">
                 Admin
                 <ListBox.ItemIndicator />
               </ListBox.Item>

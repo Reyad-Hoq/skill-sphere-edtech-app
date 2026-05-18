@@ -70,7 +70,7 @@ const Navbar = () => {
                 height={40}
                 className='rounded-full'
               />
-              <button onClick={signOutHandler} className="btn ml-3 hidden md:flex btn-error btn-outline">Log out</button>
+              <button onClick={signOutHandler} className="btn ml-3 hidden md:flex border border-orange-600 text-orange-600 btn-outline">Log out</button>
             </div> : <div className="navbar-end gap-3">
               <Link href="/login" className="btn border-2 border-orange-600 text-orange-600 hidden md:flex">Login</Link>
               <Link href="/register" className="btn bg-green-900 text-white border-2 border-green-600 hidden md:flex">Register</Link>

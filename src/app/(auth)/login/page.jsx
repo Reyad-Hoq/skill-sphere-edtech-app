@@ -6,9 +6,15 @@ import { Button, Checkbox, Description, FieldError, Form, Input, InputGroup, Lab
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { GrGoogle } from "react-icons/gr";
 
 const LoginPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  }
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -85,6 +91,13 @@ const LoginPage = () => {
             Register
           </Link>
         </p>
+        <p className="divider">
+          or
+        </p>
+        <button className="btn btn-war w-full flex items-center justify-center gap-2" onClick={handleGoogleSignIn}>
+          <GrGoogle className="size-4 mr-2" />
+          Sign in with Google
+        </button>
       </Form>
     </div>
   );

@@ -7,6 +7,7 @@ import {
   FaBookOpen,
 } from "react-icons/fa";
 import image from "@/assets/user.png";
+import Link from "next/link";
 const ProfilePage = () => {
   const { data } = useSession();
   const user = data?.user;
@@ -90,13 +91,13 @@ const ProfilePage = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <button className="btn border-2 border-orange-600 text-orange-600 px-8">
+              <Link href="/profile/edit" className="btn border-2 border-orange-600 text-orange-600 px-8">
                 Edit Profile
-              </button>
+              </Link>
 
-              <button className="btn bg-orange-600 text-white border-2 border-orange-500 px-8">
+              <Link href="/my-courses" className="btn bg-orange-600 text-white border-2 border-orange-500 px-8">
                 My Courses
-              </button>
+              </Link>
             </div>
 
           </div>
